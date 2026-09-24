@@ -1,0 +1,23 @@
+name: Windows tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  powershell:
+    name: PowerShell ${{ matrix.shell }}
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shell: [pwsh, powershell]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Run tests
+        shell: ${{ matrix.shell }}
+        run: .\tests\Run-Tests.ps1

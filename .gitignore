@@ -1,0 +1,19 @@
+# Generated packages and local reports
+dist/
+reports/
+vault/
+*.zip
+*.sha256
+
+# Game/runtime data
+WTF/
+SavedVariables/
+*.log
+*.tmp
+
+# Local editor and OS files
+.vscode/
+.idea/
+*.user
+.DS_Store
+Thumbs.db
